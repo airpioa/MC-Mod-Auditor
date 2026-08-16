@@ -57,7 +57,7 @@ Contributions are welcome! If you'd like to report a bug, suggest a feature, or 
    ```bash
    git clone [https://github.com/YOUR_USERNAME/MC-Mod-Auditor.git](https://github.com/YOUR_USERNAME/MC-Mod-Auditor.git)
    cd MC-Mod-Auditor
-  ``
+   
 2. Create a Feature Branch
 
 Create a branch specifically for your changes:
