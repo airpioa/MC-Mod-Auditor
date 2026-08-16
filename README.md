@@ -86,3 +86,22 @@ Push to your forked branch:
 git push origin feature/your-feature-name
 Open a Pull Request against the main branch of the official repository (airpioa/MC-Mod-Auditor). Describe your changes and reference any related issues.
 ```
+
+---
+
+## 🐛 Reporting Issues & Bugs
+
+Found a bug or have a feature request? Please follow these guidelines before opening an issue:
+
+### 1. Check Existing Issues
+Before creating a new report, search the [Issues tab](https://github.com/airpioa/MC-Mod-Auditor/issues) to make sure it hasn't already been reported or resolved.
+
+### 2. Opening an Issue
+When submitting a bug report, please open a new issue and include as much detail as possible:
+* **Operating System:** (e.g., Linux / Bazzite, macOS, Windows)
+* **Mod Loader & MC Version:** (e.g., Fabric 0.15.7 on Minecraft 1.20.1)
+* **Terminal Output / Crash Logs:** Relevant output from `mc_mod_auditor.py` or the `latest.log` snippet from `.mod_tester_tmp`.
+* **Steps to Reproduce:** Clear steps explaining how to trigger the bug.
+
+### 🔒 Security Vulnerabilities
+If you discover a security vulnerability, please do **NOT** open a public issue. Refer to our [SECURITY.md](SECURITY.md) to report it privately through GitHub's Security Advisory Portal.
