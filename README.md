@@ -29,7 +29,7 @@ Automated testing harness for Prism Launcher modpacks. MC-Mod-Auditor validates 
 ### 1. Download / Clone
 Clone the repository to your local machine:
 ```bash
-git clone [https://github.com/your-username/mc-mod-auditor.git](https://github.com/your-username/mc-mod-auditor.git)
+git clone [https://github.com/airpioa/mc-mod-auditor.git](https://github.com/your-username/mc-mod-auditor.git)
 cd mc-mod-auditor
 ```
 2. Make Executable (Linux / macOS)
