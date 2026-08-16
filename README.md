@@ -3,7 +3,10 @@
 Automated testing harness for Prism Launcher modpacks. MC-Mod-Auditor validates .jar stability, bisects crashes to isolate mod conflicts, auto-fetches dependencies from Modrinth, and scales RAM for shaders—keeping configs intact for easy export.
 
 ---
+Known issues:
 
+[Tool does not check for unsupported versions (game version or mod loader)](https://github.com/airpioa/MC-Mod-Auditor/issues/3)
+---
 ## ✨ Features
 
 * ⚡ **Headless Fast-Boot Server:** Boots a local, lightweight test server (`view-distance=3`, flat-world default, G1GC tuning) with sub-second log polling for rapid handoffs.
