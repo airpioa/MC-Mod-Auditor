@@ -44,3 +44,45 @@ Run the script using Python 3:
 ```Bash
 python3 mc_mod_auditor.py
 ```
+
+---
+
+## 🤝 Contributing & Making Changes
+
+Contributions are welcome! If you'd like to report a bug, suggest a feature, or submit code improvements, follow these steps:
+
+### 1. Fork & Clone
+1. Fork the repository on GitHub.
+2. Clone your fork locally:
+   ```bash
+   git clone [https://github.com/YOUR_USERNAME/MC-Mod-Auditor.git](https://github.com/YOUR_USERNAME/MC-Mod-Auditor.git)
+   cd MC-Mod-Auditor
+  ``
+2. Create a Feature Branch
+
+Create a branch specifically for your changes:
+
+```Bash
+git checkout -b feature/your-feature-name
+3. Local Testing
+Since mc_mod_auditor.py is a standalone single-file script:
+```
+Run the modified script against a local Prism Launcher instance to verify changes:
+
+```Bash
+python3 mc_mod_auditor.py
+Test configuration menu interactions via python3 mc_mod_auditor.py --config.
+```
+Ensure terminal ANSI formatting renders cleanly across different shell setups.
+
+4. Submit a Pull Request
+Commit your changes with clear, concise messages:
+
+```Bash
+git commit -m "feat: add support for custom JVM server args"
+Push to your forked branch:
+```
+```Bash
+git push origin feature/your-feature-name
+Open a Pull Request against the main branch of the official repository (airpioa/MC-Mod-Auditor). Describe your changes and reference any related issues.
+```
