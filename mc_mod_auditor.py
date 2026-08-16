@@ -711,7 +711,7 @@ def fetch_mod_from_modrinth(project_id, target_dir):
                 project_id = search_res.json()['hits'][0]['slug']
                 res = requests.get(f"https://api.modrinth.com/v2/project/{project_id}", headers=headers)
             else:
-                return False
+                return None
         
         versions_res = requests.get(f"https://api.modrinth.com/v2/project/{project_id}/version", headers=headers)
         if versions_res.status_code == 200 and len(versions_res.json()) > 0:
@@ -723,12 +723,13 @@ def fetch_mod_from_modrinth(project_id, target_dir):
             print(f"  {Colors.CYAN}⬇️ Auto-downloading dependency ({project_id}):{Colors.ENDC} {filename}")
             dl_res = requests.get(download_url, headers=headers)
             
-            with open(target_dir / filename, "wb") as f:
+            out_file = target_dir / filename
+            with open(out_file, "wb") as f:
                 f.write(dl_res.content)
-            return True
+            return out_file
     except Exception as e:
         print(f"  {Colors.RED}⚠️ Failed to fetch dependency '{project_id}': {e}{Colors.ENDC}")
-    return False
+    return None
 
 def ensure_crash_assistant(working_dir, config):
     if not config.get("auto_fetch_dependencies", True):
@@ -958,9 +959,9 @@ def main():
                 print(f"\n{Colors.YELLOW}⚡ Auto-detected missing library requirement(s): {', '.join(missing_deps)}{Colors.ENDC}")
                 resolved_any = False
                 for dep in missing_deps:
-                    if fetch_mod_from_modrinth(dep, working_dir):
-                        for downloaded in working_dir.glob(f"*{dep}*.jar"):
-                            shutil.copy2(downloaded, mods_dir / downloaded.name)
+                    fetched_jar = fetch_mod_from_modrinth(dep, working_dir)
+                    if fetched_jar and fetched_jar.exists():
+                        shutil.copy2(fetched_jar, mods_dir / fetched_jar.name)
                         resolved_any = True
                 
                 if resolved_any:
